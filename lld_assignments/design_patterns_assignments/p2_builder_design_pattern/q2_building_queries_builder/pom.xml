@@ -3,21 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>design_patterns_assignments</artifactId>
+        <artifactId>p2_builder_design_pattern</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>p2_builder_design_pattern</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>q2_building_queries_builder</artifactId>
+    <packaging>jar</packaging>
 
-    <name>builder_design_pattern</name>
+    <name>q2_building_queries_builder</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_database_configuration_builder</module>
-        <module>q1_sol_database_configuration_builder</module>
-        <module>q2_building_queries_builder</module>
-        <module>q2_sol_building_queries_builder</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
