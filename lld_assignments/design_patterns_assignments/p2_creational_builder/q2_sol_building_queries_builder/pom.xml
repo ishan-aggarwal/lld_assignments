@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>p2_builder_design_pattern</artifactId>
+        <artifactId>p2_creational_builder</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>q1_database_configuration_builder</artifactId>
+    <artifactId>q2_sol_building_queries_builder</artifactId>
     <packaging>jar</packaging>
 
-    <name>q1_database_configuration_builder</name>
+    <name>q2_sol_building_queries_builder</name>
     <url>http://maven.apache.org</url>
 
     <properties>

@@ -13,8 +13,8 @@
     <name>design_patterns_assignments</name>
     <url>http://maven.apache.org</url>
     <modules>
-        <module>p1_singleton_design_pattern</module>
-        <module>p2_builder_design_pattern</module>
+        <module>p1_creational_singleton</module>
+        <module>p2_creational_builder</module>
     </modules>
 
     <properties>
