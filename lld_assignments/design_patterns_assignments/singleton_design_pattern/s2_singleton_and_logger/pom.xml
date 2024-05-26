@@ -3,21 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>design_patterns_assignments</artifactId>
+        <artifactId>singleton_design_pattern</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>singleton_design_pattern</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>s2_singleton_and_logger</artifactId>
+    <packaging>jar</packaging>
 
-    <name>singleton_design_pattern</name>
+    <name>s2_singleton_and_logger</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_configuration_manager</module>
-        <module>s1_configuration_manager</module>
-        <module>q2_singleton_and_logger</module>
-        <module>s2_singleton_and_logger</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
