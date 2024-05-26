@@ -3,27 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>lld_assignments</artifactId>
+        <artifactId>design_patterns_assignments</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>design_patterns_assignments</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>p4_creational_factory_and_abstract_factory</artifactId>
+    <packaging>jar</packaging>
 
-    <name>design_patterns_assignments</name>
+    <name>p4_creational_factory_and_abstract_factory</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>p1_creational_singleton</module>
-        <module>p2_creational_builder</module>
-        <module>p3_creational_prototype</module>
-        <module>p4_creational_factory_and_abstract_factory</module>
-        <module>p5_structural_adapter</module>
-        <module>p6_structural_facade</module>
-        <module>p7_structural_decorator</module>
-        <module>p8_structural_flyweight</module>
-        <module>p9_behavioural_observer</module>
-        <module>p10_behavioural_strategy</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
