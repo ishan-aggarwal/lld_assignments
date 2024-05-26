@@ -3,21 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>design_patterns_assignments</artifactId>
+        <artifactId>p3_creational_prototype</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>p3_creational_prototype</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>q2_sol_efficient_invoice_generation</artifactId>
+    <packaging>jar</packaging>
 
-    <name>p3_creational_prototype</name>
+    <name>q2_sol_efficient_invoice_generation</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_configuration_object_cloning</module>
-        <module>q1_sol_configuration_object_cloning</module>
-        <module>q2_efficient_invoice_generation</module>
-        <module>q2_sol_efficient_invoice_generation</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
