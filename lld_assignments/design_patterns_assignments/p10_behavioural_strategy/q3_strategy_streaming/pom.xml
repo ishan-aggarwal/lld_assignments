@@ -3,23 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>design_patterns_assignments</artifactId>
+        <artifactId>p10_behavioural_strategy</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>p10_behavioural_strategy</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>q3_strategy_streaming</artifactId>
+    <packaging>jar</packaging>
 
-    <name>p10_behavioural_strategy</name>
+    <name>q3_strategy_streaming</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_strategy_stock</module>
-        <module>q1_sol_strategy_stock</module>
-        <module>q2_pricing_strategy</module>
-        <module>q2_sol_pricing_strategy</module>
-        <module>q3_strategy_streaming</module>
-        <module>q3_sol_strategy_streaming</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
