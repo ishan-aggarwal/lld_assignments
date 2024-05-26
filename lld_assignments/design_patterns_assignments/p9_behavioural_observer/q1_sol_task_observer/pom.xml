@@ -3,19 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>design_patterns_assignments</artifactId>
+        <artifactId>p9_behavioural_observer</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>p9_behavioural_observer</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>q1_sol_task_observer</artifactId>
+    <packaging>jar</packaging>
 
-    <name>p9_behavioural_observer</name>
+    <name>q1_sol_task_observer</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_task_observer</module>
-        <module>q1_sol_task_observer</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
