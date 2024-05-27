@@ -23,6 +23,8 @@
         <module>q4_sol_audio_player_abstract_factory</module>
         <module>q5_document_processing_factory</module>
         <module>q5_sol_document_processing_factory</module>
+        <module>q6_document_processing_abstract_factory</module>
+        <module>q6_sol_document_processing_abstract_factory</module>
     </modules>
 
     <properties>
