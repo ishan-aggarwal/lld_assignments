@@ -3,24 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>lld_assignments</artifactId>
+        <artifactId>lld_tasks</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>lld_tasks</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>q4_sol_manage_wait_list_for_a_restaurant</artifactId>
+    <packaging>jar</packaging>
 
-    <name>lld_tasks</name>
+    <name>q4_sol_manage_wait_list_for_a_restaurant</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>q1_generate_ticket</module>
-        <module>q1_sol_generate_ticket</module>
-        <module>q2_display_parking_lot_capacity</module>
-        <module>q2_sol_display_parking_lot_capacity</module>
-        <module>q3_additional_services_at_parking_lot</module>
-        <module>q4_manage_wait_list_for_a_restaurant</module>
-        <module>q4_sol_manage_wait_list_for_a_restaurant</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
