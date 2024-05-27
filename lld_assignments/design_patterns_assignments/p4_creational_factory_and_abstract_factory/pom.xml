@@ -21,6 +21,8 @@
         <module>q3_sol_audio_player_factory</module>
         <module>q4_audio_player_abstract_factory</module>
         <module>q4_sol_audio_player_abstract_factory</module>
+        <module>q5_document_processing_factory</module>
+        <module>q5_sol_document_processing_factory</module>
     </modules>
 
     <properties>
