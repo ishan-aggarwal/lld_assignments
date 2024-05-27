@@ -10,12 +10,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-public class TicketServiceImpl implements TicketService{
+public class TicketServiceImpl implements TicketService {
     private GateRepository gateRepository;
     private VehicleRepository vehicleRepository;
     private SpotAssignmentStrategy spotAssignmentStrategy;
     private ParkingLotRepository parkingLotRepository;
     private TicketRepository ticketRepository;
+
     public TicketServiceImpl(GateRepository gateRepository, VehicleRepository vehicleRepository, SpotAssignmentStrategy spotAssignmentStrategy, ParkingLotRepository parkingLotRepository, TicketRepository ticketRepository) {
         this.gateRepository = gateRepository;
         this.vehicleRepository = vehicleRepository;
@@ -31,7 +32,7 @@ public class TicketServiceImpl implements TicketService{
             throw new InvalidGateException("Invalid gate id");
         }
         Gate gate = optionalGate.get();
-        if(gate.getType().equals(GateType.EXIT)) {
+        if (gate.getType().equals(GateType.EXIT)) {
             throw new InvalidGateException("Vehicle trying to enter from exit gate");
         }
 
