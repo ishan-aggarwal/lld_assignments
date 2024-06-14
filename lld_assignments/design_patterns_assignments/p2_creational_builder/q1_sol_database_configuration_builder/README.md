@@ -17,7 +17,7 @@ Your task is to implement the Builder pattern to create instances of a configura
 3. `Test your implementation` - A test case has been provided for you to test your implementation. Run the test case to ensure that your implementation is correct. This will pick the correct implementation of the builder class based on the `@WithBuilder` annotation.
 
 ## Instructions
-
+[README.md](README.md)
 1. Create a new class annotated with the `@WithBuilder` annotation.
 2. Implement the builder pattern within your class.
 3. Run the provided test cases in the `DatabaseConfigurationBuilderTest` class to verify the correctness of your implementation.

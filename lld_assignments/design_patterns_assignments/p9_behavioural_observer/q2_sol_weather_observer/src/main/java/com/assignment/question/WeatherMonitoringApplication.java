@@ -1,9 +1,5 @@
 package com.assignment.question;
 
-import com.assignment.question.services.HumidityService;
-import com.assignment.question.services.PressureService;
-import com.assignment.question.services.TemperatureService;
-
 // The WeatherMonitoringApplication class extends the Publisher abstract class and represents a subject in the Observer Pattern.
 public class WeatherMonitoringApplication extends Publisher {
 

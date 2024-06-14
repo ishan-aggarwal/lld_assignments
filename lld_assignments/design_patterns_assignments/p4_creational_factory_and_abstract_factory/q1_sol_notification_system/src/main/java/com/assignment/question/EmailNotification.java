@@ -26,4 +26,6 @@ public class EmailNotification extends Notification {
     public NotificationType notificationType() {
         return NotificationType.EMAIL;
     }
+
+
 }

@@ -1,5 +1,5 @@
 package com.assignment.question;
 
 public enum DocumentType {
-    TEXT, PRESENTATION, SPREAD_SHEET
+    TEXT, SPREAD_SHEET
 }

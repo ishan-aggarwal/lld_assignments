@@ -14,6 +14,7 @@
         <module>design_patterns_assignments</module>
         <module>lld_tasks</module>
         <module>java_tasks</module>
+        <module>lld_problems</module>
     </modules>
 
     <properties>

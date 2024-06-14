@@ -1,7 +1,5 @@
 package com.assignment.question;
 
-import com.assignment.question.*;
-
 // Factory class for creating document processors
 public class DocumentProcessorFactory {
     // Factory method for creating the appropriate document processor based on the document type
