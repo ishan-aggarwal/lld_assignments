@@ -167,6 +167,7 @@ public class Client {
                 .reduce(Integer.MAX_VALUE, (cur_min, elem) -> {
                     return Math.min(cur_min, elem);
                 });
+
         Integer ans1 = Integer.MAX_VALUE;
         for (int i = 0; i < ls3.size(); i++) {
             ans1 = Math.min(ans1, ls3.get(i));

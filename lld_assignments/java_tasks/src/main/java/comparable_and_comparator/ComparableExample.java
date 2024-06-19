@@ -12,14 +12,15 @@ import java.util.List;
 
 public class ComparableExample {
 
+    // Comparable -> compareTo
+    // Comparator -> compare
+
     @Builder
     @Getter
     @Setter
     @ToString
     static class Person implements Comparable<Person> {
-
         private String name;
-
         private int age;
 
         @Override
@@ -38,6 +39,17 @@ public class ComparableExample {
         Collections.sort(personList);
 
         System.out.println(personList);
+
+
+//        System.out.println("--------------------");
+//
+//        List<String> stringList = new ArrayList<>();
+//        stringList.add("B");
+//        stringList.add("A");
+//        stringList.add("D");
+//        stringList.add("C");
+//        Collections.sort(stringList);
+//        System.out.println(stringList);
 
     }
 
