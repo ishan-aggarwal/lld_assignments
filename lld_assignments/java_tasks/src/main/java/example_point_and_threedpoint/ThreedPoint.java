@@ -1,4 +1,4 @@
-package example;
+package example_point_and_threedpoint;
 
 public class ThreedPoint extends Point {
     // write the code of ThreedPoint class here

@@ -1,4 +1,4 @@
-package example;
+package example_point_and_threedpoint;
 
 public class Point {
     // write the code of point class here
