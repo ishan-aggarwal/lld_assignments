@@ -1,61 +1,58 @@
-package z;
+package z.testpack;
 
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
-public class ZeroEvenOdd1 {
+public class ZeroEvenOdd {
     private int n;
-    Semaphore sema0;
-    Semaphore sema1;
-    Semaphore sema2;
-    int count = 1;
+    Semaphore evenSema = new Semaphore(0);
+    Semaphore oddSema = new Semaphore(0);
+    Semaphore zeroSema = new Semaphore(1);
 
-    public ZeroEvenOdd1(int n) {
+    public ZeroEvenOdd(int n) {
         this.n = n;
-        sema0 = new Semaphore(1);
-        sema1 = new Semaphore(0);
-        sema2 = new Semaphore(0);
     }
 
+    // printNumber.accept(x) outputs "x", where x is an integer.
     public void zero(IntConsumer printNumber) throws InterruptedException {
-        for (int i = 0; i < n; i++) {
-            sema0.acquire();
+        for (int i = 1; i <= n; i++) {
+
+            zeroSema.acquire();
             printNumber.accept(0);
-            if (count % 2 == 0) {
-                sema2.release();
+            if (i % 2 == 1) {
+                oddSema.release();
             } else {
-                sema1.release();
+                evenSema.release();
             }
         }
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
         for (int i = 2; i <= n; i += 2) {
-            sema2.acquire();
+            evenSema.acquire();
             printNumber.accept(i);
-            count++;
-            sema0.release();
+            zeroSema.release();
         }
     }
 
     public void odd(IntConsumer printNumber) throws InterruptedException {
         for (int i = 1; i <= n; i += 2) {
-            sema1.acquire();
+            oddSema.acquire();
             printNumber.accept(i);
-            count++;
-            sema0.release();
+            zeroSema.release();
         }
     }
 
     public static void main(String[] args) {
         int n = 8;  // Change this value to test with different n
-        ZeroEvenOdd1 ZeroEvenOdd1 = new ZeroEvenOdd1(n);
+        ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(n);
 
+//        IntConsumer printNumber = System.out::print;
         IntConsumer printNumber = x -> System.out.print(x + " ");
 
         Thread zeroThread = new Thread(() -> {
             try {
-                ZeroEvenOdd1.zero(printNumber);
+                zeroEvenOdd.zero(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -63,7 +60,7 @@ public class ZeroEvenOdd1 {
 
         Thread evenThread = new Thread(() -> {
             try {
-                ZeroEvenOdd1.even(printNumber);
+                zeroEvenOdd.even(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -71,7 +68,7 @@ public class ZeroEvenOdd1 {
 
         Thread oddThread = new Thread(() -> {
             try {
-                ZeroEvenOdd1.odd(printNumber);
+                zeroEvenOdd.odd(printNumber);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
