@@ -1,40 +1,35 @@
-package example_threads;
+package example_threads.mentee1;
+
+import example_threads.H2OVersion2;
 
 import java.util.concurrent.Semaphore;
 
-public class H2OVersion2 {
+public class H2O {
+    private static final Semaphore h2 = new Semaphore(2);
+    private static final Semaphore ox = new Semaphore(0);
+    private int hydrogenCount = 0;
+    private static final Object object = new Object();
 
-    private final Semaphore hydrogenSemaphore = new Semaphore(2);
-    private final Semaphore oxygenSemaphore = new Semaphore(0);
-    private int hydrogenCount = 0; // AtomicInteger
-    private final Object object = new Object();
-
-    public H2OVersion2() {}
+    public H2O() {
+    }
 
     public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
-        hydrogenSemaphore.acquire(); // Acquire one permit for hydrogen // 0 -> 2,... 2-1 = 1-1=0
-        releaseHydrogen.run(); // HH0HH
+        h2.acquire();
+        releaseHydrogen.run();
         synchronized (object) {
-            hydrogenCount++; // 0->1->2
+            hydrogenCount++;
             if (hydrogenCount == 2) {
-                oxygenSemaphore.release(); // Release one oxygen permit when two hydrogen atoms are ready // 1
+                ox.release();
             }
         }
     }
 
-    // HHOHH0
-    // HHO
-    // hydrongenCount = 0
-    // 2H
-    // 1O
-
-
     public void oxygen(Runnable releaseOxygen) throws InterruptedException {
-        oxygenSemaphore.acquire(); // Acquire one permit for oxygen // 0
-        releaseOxygen.run(); // O
+        ox.acquire();
+        releaseOxygen.run();
         synchronized (object) {
-            hydrogenCount = 0; // Reset hydrogen count after forming a water molecule
-            hydrogenSemaphore.release(2); // Release two hydrogen permits for the next water molecule
+            hydrogenCount = 0;
+            h2.release(2);
         }
     }
 
@@ -46,7 +41,7 @@ public class H2OVersion2 {
         Runnable releaseOxygen = () -> System.out.print("O");
 
         // Example input: "OOHHHH" (2 oxygen and 4 hydrogen atoms)
-        String input = "OOHHHH";
+        String input = "HOOHHH";
         //HH0HH0
 
         for (char c : input.toCharArray()) {

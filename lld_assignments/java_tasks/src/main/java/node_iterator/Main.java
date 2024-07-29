@@ -1,5 +1,7 @@
 package node_iterator;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         // Creating a linked list: 1 -> 2 -> 3
@@ -18,8 +20,18 @@ public class Main {
         Node1 node1 = new Node1(1, node2);
 
         // Iterating through the linked list and printing each element
-        for (Node1 tempNode : node1) {
-            System.out.println(tempNode);
+        for (Node1 abc : node1) {
+            System.out.println(abc);
         }
+
+        List<String> stringList = List.of("Ishan", "Aggarwal", "test1");
+        for (String str : stringList) {
+            if (str.contains("Ishan")) {
+                System.out.println(str);
+            }
+        }
+
+        stringList.stream().filter(str -> str.contains("Ishan")).forEach(System.out::println);
+
     }
 }

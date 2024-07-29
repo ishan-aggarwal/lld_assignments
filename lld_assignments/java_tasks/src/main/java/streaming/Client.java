@@ -144,6 +144,12 @@ public class Client {
         if (ls4.isPresent()) {
             System.out.println(ls4.get());
         }
+
+        List<Integer> l1 = List.of(1, 2, 3, 4, 5, 6);
+        Integer sum = l1.stream().reduce(0, (a, b) -> a + b);
+        System.out.println(sum);
+        System.out.println(getSum(l1.stream()));
+
         //Reduce method - helps reduce multiple values into one
         Integer ls5 = ls
                 .stream()
@@ -199,6 +205,10 @@ public class Client {
         return (x, y) -> {
             return y - x;
         };
+    }
+
+    static int getSum(Stream<Integer> stream) {
+        return stream.reduce(0, (a, b) -> a + b);
     }
 
     private static Function<Integer, Integer> getFunction() {

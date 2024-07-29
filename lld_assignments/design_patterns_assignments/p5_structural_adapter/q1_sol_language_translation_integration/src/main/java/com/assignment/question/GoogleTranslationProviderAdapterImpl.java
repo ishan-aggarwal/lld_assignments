@@ -7,7 +7,7 @@ import java.util.*;
 // // The GoogleTranslationProviderAdapterImpl class is an adapter for the GoogleTranslateApi.
 public class GoogleTranslationProviderAdapterImpl implements TranslationProviderAdapter {
 
-    private GoogleTranslateApi googleTranslateApi = new GoogleTranslateApi();
+    private final GoogleTranslateApi googleTranslateApi = new GoogleTranslateApi();
 
     // The convert method converts the TranslationRequest to a GoogleTranslationRequest and calls the convert method of the GoogleTranslateApi.
     @Override

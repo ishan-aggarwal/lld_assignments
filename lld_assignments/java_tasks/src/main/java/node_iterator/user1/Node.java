@@ -2,7 +2,7 @@ package node_iterator.user1;
 
 import java.util.Iterator;
 
-class Node implements Iterable<Node> {
+public class Node /*implements Iterable<Node>*/ {
     private int data;
     private Node next;
 
@@ -19,25 +19,30 @@ class Node implements Iterable<Node> {
         return data;
     }
 
-    public Iterator<Node> iterator() {
-        return new NodeIterator(this);
-    }
+//    public Iterator<Node> iterator() {
+//        return null;
+////        return new NodeIterator(this);
+//    }
+//
+//    private class NodeIterator implements Iterator<Node> {
+//        private Node head;
+//
+//        public NodeIterator(Node head) {
+//            this.head = head;
+//        }
+//
+//        public boolean hasNext() {
+//            return head != null;
+//        }
+//
+//        public Node next() {
+//            Node temp = head;
+//            head = head.getNext();
+//            return temp;
+//        }
+//    }
 
-    private class NodeIterator implements Iterator<Node> {
-        private Node head;
+    public static void main(String[] args) {
 
-        public NodeIterator(Node head) {
-            this.head = head;
-        }
-
-        public boolean hasNext() {
-            return head != null;
-        }
-
-        public Node next() {
-            Node temp = head;
-            head = head.getNext();
-            return temp;
-        }
     }
 }

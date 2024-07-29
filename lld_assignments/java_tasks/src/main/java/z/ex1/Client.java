@@ -1,6 +1,10 @@
 package z.ex1;
 
-class P {
+class A {
+    protected int d = 300;
+}
+
+class P extends A {
     protected int d1 = 10;
     protected int d = 100;
 
@@ -42,5 +46,8 @@ public class Client {
         obj.fun1();
         obj.fun();
         obj.sfun();
+
+        A obj1 = new C();
+        System.out.println(obj1.d);
     }
 }

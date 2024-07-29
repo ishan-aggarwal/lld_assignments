@@ -10,8 +10,8 @@ import com.assignment.question.TranslationRequest;
 
 public class TranslationManager {
 
-    private TranslationProviderAdapter googleTranslationProviderAdapter = new GoogleTranslationProviderAdapterImpl();
-    private TranslationProviderAdapter microsoftTranslationProviderAdapter = new MicrosoftTranslationProviderAdapterImpl();
+    private final TranslationProviderAdapter googleTranslationProviderAdapter = new GoogleTranslationProviderAdapterImpl();
+    private final TranslationProviderAdapter microsoftTranslationProviderAdapter = new MicrosoftTranslationProviderAdapterImpl();
 
     public String translate(String text, String sourceLanguage, String targetLanguage, String provider) {
         if (provider.equals("google")) {

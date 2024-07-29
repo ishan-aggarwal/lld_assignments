@@ -8,9 +8,9 @@ import java.util.*;
 
 public class MicrosoftTranslationProviderAdapterImpl implements TranslationProviderAdapter {
 
-    private MicrosoftTranslateApi microsoftTranslateApi = new MicrosoftTranslateApi();
+    private final MicrosoftTranslateApi microsoftTranslateApi = new MicrosoftTranslateApi();
 
-    // The convert method calls the translate method of the MicrosoftTranslateApi.
+    // The convert method calls translate method of the MicrosoftTranslateApi.
     @Override
     public String convert(TranslationRequest request) {
         return microsoftTranslateApi.translate(request.getText(), request.getSourceLanguage(), request.getTargetLanguage());

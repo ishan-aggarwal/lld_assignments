@@ -18,11 +18,11 @@ public class Car implements Comparable<Car> {
     }
 
     // Implement the compareTo method to compare Cars by price
-    @Override
-    public int compareTo(Car otherCar) {
-//        return otherCar.price - this.price;
-        return this.name.compareTo(otherCar.name);
-    }
+//    @Override
+//    public int compareTo(Car otherCar) {
+////        return otherCar.price - this.price;
+//        return this.name.compareTo(otherCar.name);
+//    }
 
     // Override toString method for better readability
     @Override
@@ -53,14 +53,19 @@ public class Car implements Comparable<Car> {
             System.out.println(car);
         }
 
-        Arrays.sort(cars);
+//        Arrays.sort(cars);
         Collections.sort(carList);
 
         System.out.println(carList);
 
         System.out.println("\nAfter sorting:");
-        for (Car car : cars) {
-            System.out.println(car);
-        }
+//        for (Car car : cars) {
+//            System.out.println(car);
+//        }
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return o.price - this.price;
     }
 }

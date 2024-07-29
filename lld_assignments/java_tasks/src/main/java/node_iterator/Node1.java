@@ -1,10 +1,13 @@
 package node_iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Node1 implements Iterable<Node1> {
 
     public int data;
+
     public Node1 next;
 
     public Node1(int data, Node1 next) {
@@ -15,7 +18,7 @@ public class Node1 implements Iterable<Node1> {
     @Override
     public Iterator<Node1> iterator() {
 //        return null;
-        return new NodeIterator1(this);
+        return new ABCIterator(this);
     }
 
     @Override
@@ -25,9 +28,9 @@ public class Node1 implements Iterable<Node1> {
                 '}';
     }
 
-    static class NodeIterator1 implements Iterator<Node1> {
+    class ABCIterator implements Iterator<Node1> {
         private Node1 current;
-        public NodeIterator1(Node1 node1) {
+        public ABCIterator(Node1 node1) {
             this.current = node1;
         }
 
