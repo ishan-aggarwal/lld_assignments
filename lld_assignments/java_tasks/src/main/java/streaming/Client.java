@@ -147,6 +147,13 @@ public class Client {
 
         List<Integer> l1 = List.of(1, 2, 3, 4, 5, 6);
         Integer sum = l1.stream().reduce(0, (a, b) -> a + b);
+
+        int initialSum = 0;
+        for (int num : l1) {
+            initialSum += num;
+        }
+        System.out.println(initialSum);
+
         System.out.println(sum);
         System.out.println(getSum(l1.stream()));
 
@@ -203,7 +210,8 @@ public class Client {
 
     private static Comparator<Integer> getComparator() {
         return (x, y) -> {
-            return y - x;
+            return y - x; // sort the list in descending order
+            // return x - y; // sort the list in ascending order
         };
     }
 

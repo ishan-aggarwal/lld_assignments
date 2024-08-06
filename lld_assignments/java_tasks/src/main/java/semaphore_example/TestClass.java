@@ -1,7 +1,5 @@
 package semaphore_example;
 
-import stream_operations.Test;
-
 import java.util.concurrent.Semaphore;
 
 public class TestClass {
