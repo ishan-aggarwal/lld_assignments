@@ -8,33 +8,41 @@ public class Student extends Person {
     private boolean isGraduate;
     private String major;
 
-    public Student() {
+    // Static block to initialize numStudents
+    static {
         numStudents = 0;
+    }
+
+    public Student() {
+        super();
         studentID = ++numStudents; // incrementing numStudents count and assigning studentID
         coursesTaken = new Course[50]; // intializing array with length of 50
         numCoursesTaken = 0;
         isGraduate = false;
         major = "undeclared";
-
     }
 
     public Student(boolean isGraduate) {
+        this();
         this.isGraduate = isGraduate;
     }
 
     public Student(String major, boolean isGraduate) {
+        this();
         this.major = major;
         this.isGraduate = isGraduate;
     }
 
     public Student(String name, int birthYear, String major, boolean isGraduate) {
         super(name, birthYear);
-        this.major = major;
+        studentID = ++numStudents;
+        coursesTaken = new Course[50];
+        numCoursesTaken = 0;
         this.isGraduate = isGraduate;
+        this.major = major;
     }
 
     //Getters and setters
-
     public boolean isGraduate() {
         return isGraduate;
     }
@@ -69,7 +77,6 @@ public class Student extends Person {
             numCoursesTaken++;
         }
     }
-
 
     public void addCoursesTaken(Course[] courses) {
         for (Course course : courses) {
@@ -107,17 +114,20 @@ public class Student extends Person {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) return true;
+        if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         if (!super.equals(obj)) return false;
         Student student = (Student) obj;
-        return studentID == student.studentID && numCoursesTaken == student.numCoursesTaken && isGraduate == student.isGraduate && major.equals(student.major);
+        return studentID == student.studentID &&
+                numCoursesTaken == student.numCoursesTaken &&
+                isGraduate == student.isGraduate &&
+                major.equals(student.major);
     }
 
     @Override
     public String toString() {
-        String str = String.format(" Student: studentID: %04d | Major %20s | %14s | Number of Courses Taken: %3d | Courses Taken: %s", super.toString(), studentID, major, (isGraduate ? "Graduate" : "Undergraduate"), numCoursesTaken, getAllCoursesTakenAsString());
-        return str;
+        return String.format("%s Student: studentID: %04d | Major %20s | %14s | Number of Courses Taken: %3d | Courses Taken: %s",
+                super.toString(), studentID, major, (isGraduate ? "Graduate" : "Undergraduate"), numCoursesTaken, getAllCoursesTakenAsString());
     }
 
     // compares Student objects by the number of courses taken
@@ -128,18 +138,6 @@ public class Student extends Person {
             return Integer.compare(this.numCoursesTaken, other.numCoursesTaken);
         }
         return super.compareTo(p);
-    } // allows the Student objects to be compared based on numCoursesTaken.
-
-//	public int compareTo(Person p) {
-//		if (this.birthYear < p.birthYear) {
-//			return -1;
-//		} else if (this.birthYear > p.birthYear) {
-//			return 1;
-//		} else {
-//			return 0;
-//		}
-//	}
-
-
+    }
 }
 

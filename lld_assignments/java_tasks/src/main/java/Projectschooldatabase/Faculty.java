@@ -123,7 +123,7 @@ public class Faculty extends Employee {
     @Override
     public String toString() {
         return String.format("%s Faculty: %11s | Number of Courses Taught: %3d | Courses Taught: %s",
-                super.toString(), (isTenured ? "Tenured" : "Not Tenured"), numCoursesTaught, getAllCoursesTaughtAsString());
+                super.toString(), (isTenured ? "Is Tenured" : "Not Tenured"), numCoursesTaught, getAllCoursesTaughtAsString());
     }
 
 
