@@ -19,4 +19,16 @@ public class Rectangle {
         this.topLeft = new Point(copyR.topLeft);
         this.bottomRight = new Point(copyR.bottomRight);
     }
+
+    public static void main(String[] args) {
+        Point tL = new Point(1, 2);
+        Point bR = new Point(4, 5);
+
+        Point copyPoint = new Point(tL);
+
+        Rectangle r = new Rectangle(tL, bR);
+
+        Rectangle r1 = new Rectangle(r);
+        System.out.println("hello");
+    }
 }
