@@ -5,6 +5,9 @@ public class Rectangle {
     Point topLeft;
     Point bottomRight;
 
+    int height;
+    int width;
+
     public Rectangle(int topLeftX, int topLeftY, int bottomRightX, int bottomRightY) {
         this.topLeft = new Point(topLeftX, topLeftY);
         this.bottomRight = new Point(bottomRightX, bottomRightY);
@@ -18,6 +21,11 @@ public class Rectangle {
     public Rectangle(Rectangle copyR) {
         this.topLeft = new Point(copyR.topLeft);
         this.bottomRight = new Point(copyR.bottomRight);
+    }
+
+    public Point getBottomRight() {
+        Point bottomRight = new Point(topLeft.x + width, topLeft.y - height);
+        return bottomRight;
     }
 
     public static void main(String[] args) {
