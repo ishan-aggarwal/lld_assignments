@@ -1,5 +1,10 @@
 package Projectschooldatabase;//package Projectschooldatabase;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 public class Student extends Person {
     private static int numStudents;
     private int studentID;
