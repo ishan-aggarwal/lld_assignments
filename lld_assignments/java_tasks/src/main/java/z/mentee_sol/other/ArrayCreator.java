@@ -35,7 +35,7 @@ class Client {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        ExecutorService es = Executors.newFixedThreadPool(1);
+        ExecutorService es = Executors.newSingleThreadExecutor();
         ArrayCreator arr = new ArrayCreator(n);
         Future<List<Integer>> ans = es.submit(arr);
         List<Integer> list = ans.get();

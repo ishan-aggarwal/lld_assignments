@@ -25,6 +25,17 @@ public class TestExample {
 
     public static void main(String[] args) {
 
+        List<Integer> listABC = new ArrayList<>();
+        listABC.add(1);
+        listABC.add(2);
+        listABC.add(3);
+
+        // method reference operator
+//        listABC.forEach(System.out.println());
+
+        listABC.forEach(e -> System.out.println(e));
+
+        System.out.println("-------------------------------------------------------------");
         Runnable runnable = new Runnable() {
             @Override
             public void run() {

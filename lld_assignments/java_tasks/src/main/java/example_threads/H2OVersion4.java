@@ -19,10 +19,10 @@ public class H2OVersion4 {
     }
 
     public void oxygen(Runnable releaseOxygen) throws InterruptedException {
-        oxygenSemaphore.acquire();
+        oxygenSemaphore.acquire(2);
         // releaseOxygen.run() outputs "O". Do not change or remove this line.
         releaseOxygen.run();
-        hydrogenSemaphore.release();
+        hydrogenSemaphore.release(2);
     }
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class H2OVersion4 {
         Runnable releaseOxygen = () -> System.out.print("O");
 
         // Example input: "OOHHHH" (2 oxygen and 4 hydrogen atoms)
-        String input = "OOHHHH";
+        String input = "OOHHHHHOHOHH";
 
         for (char c : input.toCharArray()) {
             if (c == 'H') {

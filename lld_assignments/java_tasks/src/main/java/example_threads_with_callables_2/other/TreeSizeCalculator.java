@@ -6,11 +6,11 @@ import java.util.concurrent.Future;
 
 public class TreeSizeCalculator implements Callable<Integer> {
     private Node root;
-    private ExecutorService exs;
+    private ExecutorService ex;
 
-    public TreeSizeCalculator(Node root, ExecutorService exs){
+    public TreeSizeCalculator(Node root, ExecutorService ex){
         this.root = root;
-        this.exs = exs;
+        this.ex = ex;
     }
 
     @Override
@@ -19,11 +19,11 @@ public class TreeSizeCalculator implements Callable<Integer> {
             return 0;
         }
 
-        TreeSizeCalculator leftSizeCalculator = new TreeSizeCalculator(root.left, exs);
-        Future<Integer> leftSizeFuture = exs.submit(leftSizeCalculator);
+        TreeSizeCalculator leftSizeCalculator = new TreeSizeCalculator(root.left, ex);
+        Future<Integer> leftSizeFuture = ex.submit(leftSizeCalculator);
 
-        TreeSizeCalculator rightSizeCalculator = new TreeSizeCalculator(root.right, exs);
-        Future<Integer> rightSizeFuture = exs.submit(rightSizeCalculator);
+        TreeSizeCalculator rightSizeCalculator = new TreeSizeCalculator(root.right, ex);
+        Future<Integer> rightSizeFuture = ex.submit(rightSizeCalculator);
 
         return leftSizeFuture.get() + rightSizeFuture.get() + 1;
     }

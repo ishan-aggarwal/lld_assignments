@@ -9,6 +9,8 @@ public class DatabaseConfigurationBuilder {
     private boolean enableCache;
     private boolean isReadOnly;
 
+    private String testField;
+
     public DatabaseConfigurationBuilder(Builder builder) {
         this.databaseUrl = builder.databaseUrl;
         this.username = builder.username;
@@ -29,6 +31,8 @@ public class DatabaseConfigurationBuilder {
         public int maxConnections;
         public boolean enableCache;
         public boolean isReadOnly;
+
+        public String testField;
 
         public Builder databaseUrl(String databaseUrl) {
             this.databaseUrl = databaseUrl;
@@ -60,8 +64,39 @@ public class DatabaseConfigurationBuilder {
             return this;
         }
 
+        public Builder testField(String testField) {
+            this.testField = testField;
+            return this;
+        }
+
         public DatabaseConfigurationBuilder build() {
             return new DatabaseConfigurationBuilder(this);
         }
+    }
+
+    public static void main(String[] args) {
+        DatabaseConfigurationBuilder databaseConfigurationBuilder1 =
+                DatabaseConfigurationBuilder.getBuilder()
+                        .build();
+
+        DatabaseConfigurationBuilder databaseConfigurationBuilder2 =
+                DatabaseConfigurationBuilder.getBuilder()
+                        .build();
+
+        DatabaseConfigurationBuilder databaseConfigurationBuilder3 =
+                DatabaseConfigurationBuilder.getBuilder()
+                        .databaseUrl("db-url")
+                        .enableCache(true)
+                        .build();
+
+        DatabaseConfigurationBuilder databaseConfigurationBuilder4 =
+                DatabaseConfigurationBuilder.getBuilder()
+                        .databaseUrl("db-url-1")
+                        .maxConnections(20)
+                        .isReadOnly(true)
+                        .testField("testField")
+                        .build();
+
+        System.out.println("--------------------");
     }
 }

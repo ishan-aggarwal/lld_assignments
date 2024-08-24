@@ -1,6 +1,9 @@
 package com.assignment.question;
 
+import lombok.Data;
+
 @WithBuilder
+@Data
 public class MessageBuilder {
     private MessageType messageType;
     private String content;
