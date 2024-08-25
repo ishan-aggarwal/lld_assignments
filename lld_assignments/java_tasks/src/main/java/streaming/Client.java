@@ -92,15 +92,55 @@ public class Client {
         How ? - Streams internally maintains a complex tree like structure which makes the stream smart enough to optimize things
          */
         List<Integer> ls = List.of(5, 4, 3, 2, 8, 9, 6);
+
+        List<Integer> ls1 = new ArrayList<>();
+        for (int i = 0; i < ls.size(); i++) {
+            ls1.add(ls.get(i) * 2);
+            System.out.println(ls1.get(i));
+        }
+
+        // input data change -> then use mapper
+        // input data kuch sahi hai kuch galat hai... to filter lagana hai
+        ls.stream().map(e -> e * 2).forEach(System.out::println);
+        List<Integer> collect1 = ls.stream().map(e -> e * 2).collect(Collectors.toList());
+        System.out.println(collect1);
+
+
+        for (int i = 0; i < ls.size(); i++) {
+            if (ls.get(i) % 2 == 0) {
+                System.out.println(ls.get(i));
+            }
+        }
+
+
+        // method reference// double colon
+        // Classname::methodName
+        // objectName::methodName
+
+//        ls.forEach(System.out::println);
+
+        ls.stream().filter(e -> e % 2 == 0).forEach(System.out::println);
+        System.out.println("---------------");
+
+
         Stream<Integer> s1 = ls.stream();
         Stream<Integer> s2 = ls.stream();
+        Stream<Integer> s3 = ls.stream();
         System.out.println(s1); //s1 is stream reference
         //System.out.println(s1.limit(4)); //limit also is a stream reference
 
         // steam -> intermediate operations (filter, map, limit) -> terminal operations (count, max, tolist,)
 
+//        for (int i =0 ; i < ls.size(); i++) {
+//            System.out.println(ls.get(i));
+//        }
+//
+//        ls.stream().forEach(System.out::println);
 
-        System.out.println(s1.limit(5).count());
+        List<Integer> collect = s3.limit(3).collect(Collectors.toList());
+        System.out.println(collect);
+
+        System.out.println("Count: " + s1.limit(3).count());
         //System.out.println(s2.limit(5).count());
         System.out.println(ls); //Streams doesn't affect the actual data source
         //Throws an error because stream has already been operated and closed
@@ -109,7 +149,7 @@ public class Client {
         Terminal methods - return the data, for eg - count, forEach
          */
         s2.forEach((elem) -> {
-            System.out.println("element is " + elem);
+            System.out.println("Ishan is new is " + elem);
         });
 
 //        s2.forEach(System.out::println);
@@ -125,14 +165,16 @@ public class Client {
                 .stream()
                 .filter(getIntegerPredicate())
                 .collect(Collectors.toList());
-        System.out.println(ls2);
-        //map method + sort method
         List<Integer> ls3 = ls
                 .stream()
-                .filter(getIntegerPredicate())
-                .map(getFunction())
-                .sorted(getComparator())
+                .map(getFunction()) // filter wale numbers ko square kar dia
+                .filter(getIntegerPredicate()) // filter krke even number laya
+                .map(e -> e * 10)
+                .sorted(getComparator()) // sort
+                .filter(e -> e > 10 && e < 20)
                 .collect(Collectors.toList());
+        System.out.println(ls2);
+        //map method + sort method
         System.out.println(ls3);
         //findFirst() ,  reduce
         Optional<Integer> ls4 = ls

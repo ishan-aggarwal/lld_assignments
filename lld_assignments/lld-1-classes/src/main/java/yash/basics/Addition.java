@@ -7,6 +7,10 @@ import java.util.Scanner; // import statements in java
 
 public class Addition { // class is a blueprint
 
+    static int staticVariable;
+
+    int defaultVariable;
+
     // class encapsulates both data members and member functions
     // encapsulation//
     // equal importance is given to both the data members and members functions of the class in Java (OOP)
@@ -141,7 +145,7 @@ public class Addition { // class is a blueprint
 
         if (array2[0] % 2 == 0) {
 
-        } else if (array2[0] % 2 != 0){
+        } else if (array2[0] % 2 != 0) {
 
         } else {
 
