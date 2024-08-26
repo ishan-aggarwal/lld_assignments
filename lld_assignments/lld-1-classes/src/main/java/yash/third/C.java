@@ -18,7 +18,7 @@ class B extends A {
 
     public B(String msg) {
         super(msg);
-        System.out.println("Inside B constructor");
+        System.out.println("Inside B constructor: " + msg);
     }
 }
 
