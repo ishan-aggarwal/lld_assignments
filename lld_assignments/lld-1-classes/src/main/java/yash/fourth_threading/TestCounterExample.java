@@ -55,6 +55,7 @@ class MyRunnableSubtractor implements Runnable {
 
     @Override
     public void run() {
+        System.out.println(Thread.currentThread().getName());
         r.decreaseI();
     }
 }
@@ -72,6 +73,10 @@ public class TestCounterExample {
 
         Thread t3 = new Thread(new MyRunnableAdder(r));
         Thread t4 = new Thread(new MyRunnableSubtractor(r));
+
+        t4.setPriority(Thread.MAX_PRIORITY);
+
+        System.out.println(Thread.currentThread().getName());
 
         t1.start();
         t3.start();
